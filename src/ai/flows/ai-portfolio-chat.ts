@@ -153,14 +153,18 @@ export async function aiPortfolioChat(input: AIPortfolioChatInput): Promise<AIPo
 
 const prompt = ai.definePrompt({
   name: 'aiPortfolioChatPrompt',
-  input: {schema: AIPortfolioChatInputSchema},
+  input: {
+    schema: AIPortfolioChatInputSchema.extend({
+      cv: z.string(),
+    }),
+  },
   output: {schema: AIPortfolioChatOutputSchema},
   prompt: `You are an AI assistant for Khin Cho Htet's professional portfolio. Your role is to answer questions from recruiters about Khin's experience, skills, and projects, providing concise and tailored information based *only* on the provided CV. Do not invent information. If the answer is not in the CV, state that you cannot find the information.
 
 Khin Cho Htet's CV:
 
 \`\`\`
-${KhinCV}
+{{{cv}}}
 \`\`\`
 
 Recruiter's Question: {{{question}}}
@@ -178,7 +182,10 @@ const aiPortfolioChatFlow = ai.defineFlow(
     outputSchema: AIPortfolioChatOutputSchema,
   },
   async input => {
-    const {output} = await prompt(input);
+    const {output} = await prompt({
+      ...input,
+      cv: KhinCV,
+    });
     return output!;
   }
 );

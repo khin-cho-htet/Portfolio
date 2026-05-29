@@ -1,4 +1,3 @@
-
 import { Hero } from '@/components/portfolio/hero';
 import { Timeline } from '@/components/portfolio/timeline';
 import { Projects } from '@/components/portfolio/projects';
@@ -8,6 +7,8 @@ import { AIChat } from '@/components/portfolio/ai-chat';
 import { Linkedin, Mail, Phone, MapPin, Globe } from 'lucide-react';
 
 export default function Home() {
+  const currentYear = 2025; // Hardcoded to avoid hydration mismatch
+
   return (
     <main className="relative">
       <header className="fixed top-0 w-full z-50 bg-background/80 backdrop-blur-md border-b border-white/5 px-6 py-4">
@@ -85,7 +86,7 @@ export default function Home() {
           </div>
           
           <div className="mt-20 pt-8 border-t border-border text-center text-sm text-muted-foreground">
-            © {new Date().getFullYear()} Khin Cho Htet. All rights reserved.
+            © {currentYear} Khin Cho Htet. All rights reserved.
           </div>
         </div>
       </footer>
