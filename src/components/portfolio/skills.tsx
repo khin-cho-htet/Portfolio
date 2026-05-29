@@ -18,16 +18,14 @@ export function Skills() {
 
       <div className="container mx-auto max-w-6xl relative z-10">
         <ScrollReveal delay={100} className="mb-24 text-left space-y-4">
-          <div className="flex items-center gap-2 font-mono text-xs uppercase tracking-[0.25em] text-[#9B86BD]">
-            <span>[ Section.04 ]</span>
-            <span>•</span>
-            <span>Technical Capabilities</span>
+          <div className="text-base font-semibold text-[#d4c6ea] md:text-lg">
+            Skills
           </div>
-          <h3 className="text-4xl md:text-5xl font-headline font-bold text-white uppercase tracking-tight">
-            Skill Directory
+          <h3 className="font-headline text-4xl font-extrabold tracking-[-0.03em] text-white md:text-5xl">
+            Core capabilities
           </h3>
-          <p className="font-mono text-xs text-white/40 tracking-wider">
-            SYSTEM ENGINEERING &amp; BUSINESS ARCHITECTURE OPERATING DIRECTORY
+          <p className="max-w-2xl text-lg leading-8 text-white/60">
+            The methods, systems, and communication skills I rely on to turn strategy into delivery.
           </p>
         </ScrollReveal>
 
@@ -36,30 +34,27 @@ export function Skills() {
           {skills.map((group, idx) => (
             <div key={idx} className="bg-[#111319] border border-white/5 p-6 rounded-none hover:border-[#9B86BD]/20 transition-all duration-300 relative group">
               
-              {/* Drafting crosshairs */}
               <div className="absolute top-0 left-0 w-1.5 h-1.5 border-t border-l border-white/10" />
               <div className="absolute top-0 right-0 w-1.5 h-1.5 border-t border-r border-white/10" />
               
-              {/* Category Schema Header */}
               <div className="flex justify-between items-center mb-6 border-b border-white/5 pb-3">
-                <h4 className="text-sm font-headline font-bold uppercase text-white tracking-wider flex items-center gap-2">
+                <h4 className="flex items-center gap-2 font-headline text-xl font-bold text-white tracking-tight">
                   <Database className="w-4 h-4 text-[#C57BCC]" />
                   {group.category}
                 </h4>
-                <span className="font-mono text-[8px] text-[#9B86BD]/60 bg-[#9B86BD]/5 px-2 py-0.5 border border-[#9B86BD]/10 tracking-widest uppercase">
+                <span className="rounded-full border border-white/10 bg-white/[0.03] px-3 py-1 text-xs font-medium text-white/50">
                   {group.schema}
                 </span>
               </div>
 
-              {/* Tag Grid */}
               <div className="flex flex-wrap gap-2">
                 {group.items.map((skill, i) => (
                   <Badge 
                     key={i} 
                     variant="outline" 
-                    className="px-3 py-1.5 bg-[#0c0d12] hover:bg-[#111319] border border-white/5 text-white/80 font-mono text-[10px] uppercase tracking-wider rounded-none cursor-default transition-all flex items-center gap-1.5 hover:border-[#9B86BD]/30"
+                    className="flex cursor-default items-center gap-2 rounded-full border border-white/7 bg-[#0c0d12] px-3.5 py-2 text-sm font-medium text-white/80 transition-all hover:border-[#9B86BD]/30 hover:bg-[#111319]"
                   >
-                    <CheckSquare className="w-3.5 h-3.5 text-[#9B86BD] shrink-0" />
+                    <CheckSquare className="h-3.5 w-3.5 shrink-0 text-[#9B86BD]" />
                     {skill}
                   </Badge>
                 ))}

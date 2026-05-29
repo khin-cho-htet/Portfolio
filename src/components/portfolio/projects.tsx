@@ -36,21 +36,18 @@ const projectDomains = [
 export function Projects() {
   return (
     <section className="relative py-28 px-6 bg-[#0c0d12] border-t border-white/5">
-      {/* Background grids */}
       <div className="absolute inset-y-0 right-[20%] w-[1px] bg-white/5 pointer-events-none" />
 
       <div className="container mx-auto max-w-6xl relative z-10">
         <ScrollReveal delay={100} className="mb-24 text-left space-y-4">
-          <div className="flex items-center gap-2 font-mono text-xs uppercase tracking-[0.25em] text-[#9B86BD]">
-            <span>[ Section.03 ]</span>
-            <span>•</span>
-            <span>Technical Scope</span>
+          <div className="text-base font-semibold text-[#d4c6ea] md:text-lg">
+            Project scope
           </div>
-          <h3 className="text-4xl md:text-5xl font-headline font-bold text-white uppercase tracking-tight">
-            Architecture Matrix
+          <h3 className="font-headline text-4xl font-extrabold tracking-[-0.03em] text-white md:text-5xl">
+            Areas I work across
           </h3>
-          <p className="font-mono text-xs text-white/40 tracking-wider">
-            DOMAIN CLASSIFICATION AND ENTERPRISE SOLUTIONS DEPLOYED
+          <p className="max-w-2xl text-lg leading-8 text-white/60">
+            Product and operational domains where I have mapped requirements, supported delivery, and improved adoption.
           </p>
         </ScrollReveal>
 
@@ -64,44 +61,37 @@ export function Projects() {
                 key={idx} 
                 className="bg-[#111319] border border-white/5 p-6 min-h-[380px] flex flex-col justify-between rounded-none hover:border-[#C57BCC]/30 transition-all duration-300 relative group"
               >
-                {/* Technical grid tick markers in card corner */}
                 <div className="absolute top-0 right-0 w-2.5 h-2.5 border-t border-r border-white/10" />
                 <div className="absolute bottom-0 left-0 w-2.5 h-2.5 border-b border-l border-white/10" />
 
                 <div>
-                  {/* Category Header */}
                   <div className="flex justify-between items-start mb-10 border-b border-white/5 pb-4">
                     <div className="w-10 h-10 border border-white/10 bg-[#0c0d12] flex items-center justify-center text-[#9B86BD] group-hover:border-[#9B86BD]/40 transition-colors">
                       <Icon className="w-4.5 h-4.5" />
                     </div>
                     <div className="text-right">
-                      <span className="font-mono text-[9px] text-[#9B86BD] block uppercase tracking-widest font-bold">
-                        {domain.code}
-                      </span>
-                      <span className="font-mono text-[8px] text-white/30 block uppercase tracking-wider">
+                      <span className="block text-sm font-semibold text-[#d4c6ea]">
                         {domain.category}
                       </span>
                     </div>
                   </div>
 
-                  {/* Title */}
-                  <h4 className="text-xl font-headline font-bold text-white uppercase tracking-tight mb-4 group-hover:text-[#9B86BD] transition-colors">
+                  <h4 className="mb-4 font-headline text-2xl font-bold tracking-tight text-white transition-colors group-hover:text-[#9B86BD]">
                     {domain.title}
                   </h4>
                 </div>
 
-                {/* Tags Section */}
                 <div className="space-y-4">
-                  <div className="flex items-center gap-1.5 font-mono text-[8px] text-white/40 tracking-wider">
+                  <div className="flex items-center gap-1.5 text-sm text-white/45">
                     <Terminal className="w-3 h-3 text-[#C57BCC]" />
-                    <span>SYSTEM CORE MODULES</span>
+                    <span>Key modules</span>
                   </div>
                   <div className="flex flex-wrap gap-2">
                     {domain.items.map((item, i) => (
                       <Badge 
                         key={i} 
                         variant="secondary" 
-                        className="bg-[#0c0d12] hover:bg-[#111319] border border-white/5 hover:border-[#9B86BD]/20 text-white/80 px-2.5 py-1 text-[10px] font-mono font-normal rounded-none transition-colors"
+                        className="rounded-full border border-white/7 bg-[#0c0d12] px-3 py-1.5 text-sm font-medium text-white/80 transition-colors hover:border-[#9B86BD]/20 hover:bg-[#111319]"
                       >
                         {item}
                       </Badge>

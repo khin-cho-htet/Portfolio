@@ -1,12 +1,12 @@
 import Image from 'next/image';
 import { Button } from '@/components/ui/button';
-import { ArrowRight, Mail, Globe, MapPin, Star, Cpu } from 'lucide-react';
+import { ArrowRight, Mail, Globe, MapPin, Star } from 'lucide-react';
 import { ScrollReveal } from './scroll-reveal';
 import profilePic from '@/assets/profilepicture.png';
 
 export function Hero() {
   return (
-    <section className="relative min-h-screen flex items-center pt-32 pb-20 px-6 overflow-hidden bg-[#0c0d12]">
+    <section className="relative flex min-h-[calc(100svh-5.5rem)] items-start overflow-hidden bg-[#0c0d12] px-6 pb-20 pt-[10.5rem] sm:pt-[11rem] md:pt-[12.5rem] lg:pt-28">
       {/* Structural technical grid lines in background */}
       <div className="absolute inset-0 pointer-events-none opacity-5">
         <div className="absolute left-[10%] top-0 bottom-0 w-[1px] bg-white" />
@@ -17,136 +17,121 @@ export function Hero() {
         <div className="absolute top-[75%] left-0 right-0 h-[1px] bg-white" />
       </div>
 
-      <div className="container mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center relative z-10">
+      <div className="container relative z-10 mx-auto grid grid-cols-1 items-start gap-12 lg:grid-cols-12 lg:items-start lg:gap-10">
 
         {/* ── Left Side: Editorial Typography Masthead (7 cols) ── */}
-        <div className="lg:col-span-7 space-y-8 text-left">
-          <ScrollReveal delay={100} className="space-y-6">
-            {/* Monospace System Tag */}
-            <div className="inline-flex items-center gap-2 px-3 py-1 bg-[#111319] border border-white/5 font-mono text-[9px] text-[#9B86BD] uppercase tracking-widest">
-              <Cpu className="w-3.5 h-3.5 animate-pulse" />
-              <span>[ system.status: operational ]</span>
-            </div>
-
-            <div className="space-y-3">
-              <p className="font-mono text-xs uppercase tracking-[0.25em] text-white/50 block">
-                Portfolio // Case Ledger
-              </p>
-              <h1 className="text-5xl sm:text-6xl lg:text-7xl font-headline font-bold leading-[0.95] tracking-tight text-white uppercase">
-                Khin Cho<br />
-                <span className="text-[#9B86BD]">Htet</span>
-              </h1>
-              <p className="font-mono text-sm font-medium text-[#C57BCC] tracking-wider uppercase mt-2">
-                // Senior Business Analyst
-              </p>
-            </div>
-
-            <p className="text-white/70 text-sm sm:text-base max-w-lg leading-relaxed font-sans font-light">
-              Bridging complex enterprise resource planning (ERP), core banking mechanisms, and software architectures. Specializing in translating high-level business complexities into structured technical schematics.
+        <div className="space-y-8 text-left lg:col-span-7 lg:space-y-10">
+          <ScrollReveal delay={100} className="space-y-5 lg:space-y-6">
+            <p className="text-lg font-medium text-[#d4c6ea] sm:text-xl">
+              Senior business analyst focused on ERP, banking, and operations
             </p>
+
+            <div className="space-y-5">
+              <h1 className="max-w-4xl font-headline text-5xl font-extrabold leading-[0.95] tracking-[-0.04em] text-white sm:text-6xl lg:text-7xl xl:text-[5.5rem]">
+                Khin Cho Htet
+              </h1>
+              <p className="max-w-2xl text-lg leading-8 text-white/70 sm:text-xl">
+                I translate business requirements into clear delivery plans, aligned teams, and dependable product outcomes.
+              </p>
+            </div>
           </ScrollReveal>
 
-          {/* Action Row */}
-          <ScrollReveal delay={200} className="flex flex-wrap items-center gap-4 font-mono">
+          <ScrollReveal delay={200} className="flex flex-wrap items-center gap-4">
             <Button
               size="lg"
-              className="bg-[#9B86BD] text-black hover:bg-[#C57BCC] transition-all rounded-none px-6 py-5 text-xs font-semibold uppercase tracking-wider gap-2 shadow-none"
+              className="h-auto rounded-full bg-white px-6 py-3 text-base font-semibold text-[#0c0d12] shadow-none transition-all hover:bg-[#efe8fb]"
               asChild
             >
               <a href="#experience">
-                Execute Dossier
-                <ArrowRight className="w-3.5 h-3.5" />
+                View experience
+                <ArrowRight className="h-4 w-4" />
               </a>
             </Button>
 
             <Button
               variant="outline"
-              size="icon"
               asChild
-              className="w-10 h-10 rounded-none border-white/10 hover:border-[#9B86BD] bg-transparent hover:bg-[#9B86BD]/10 text-white/70 hover:text-white transition-all"
+              className="h-auto rounded-full border-white/14 bg-white/[0.03] px-5 py-3 text-base text-white hover:border-white/25 hover:bg-white/[0.06]"
             >
-              <a href="mailto:khinchohtet15@gmail.com" title="Email Connection">
-                <Mail className="w-4 h-4" />
+              <a href="mailto:khinchohtet15@gmail.com" title="Email Connection" className="inline-flex items-center gap-2">
+                <Mail className="h-4 w-4" />
+                Email
               </a>
             </Button>
 
             <Button
               variant="outline"
-              size="icon"
               asChild
-              className="w-10 h-10 rounded-none border-white/10 hover:border-[#9B86BD] bg-transparent hover:bg-[#9B86BD]/10 text-white/70 hover:text-white transition-all"
+              className="h-auto rounded-full border-white/14 bg-white/[0.03] px-5 py-3 text-base text-white hover:border-white/25 hover:bg-white/[0.06]"
             >
-              <a href="https://linkedin.com/in/khin-cho-htet/" target="_blank" rel="noopener noreferrer" title="LinkedIn Directory">
-                <Globe className="w-4 h-4" />
+              <a href="https://linkedin.com/in/khin-cho-htet/" target="_blank" rel="noopener noreferrer" title="LinkedIn Directory" className="inline-flex items-center gap-2">
+                <Globe className="h-4 w-4" />
+                LinkedIn
               </a>
             </Button>
           </ScrollReveal>
 
-          {/* Structured Monospace Statistics Sheet */}
-          <ScrollReveal delay={300} className="pt-6 border-t border-white/5">
-            <div className="grid grid-cols-3 gap-4 max-w-lg font-mono">
-              <div className="bg-[#111319]/40 border border-white/5 p-4 text-left">
-                <span className="text-white/40 text-[9px] block uppercase tracking-wider mb-1">Index // Experience</span>
-                <span className="text-2xl font-bold text-[#9B86BD]">03+</span>
-                <span className="text-[9px] text-white/60 block uppercase tracking-wider mt-0.5">Years Active</span>
+          <ScrollReveal delay={300} className="border-t border-white/8 pt-8">
+            <div className="grid max-w-2xl grid-cols-1 gap-4 sm:grid-cols-3">
+              <div className="rounded-3xl border border-white/8 bg-white/[0.03] p-5 text-left">
+                <span className="mb-2 block text-sm font-medium text-white/55">Experience</span>
+                <span className="text-3xl font-extrabold tracking-tight text-white">3+ years</span>
+                <span className="mt-1 block text-sm text-white/60">Leading analysis and delivery work</span>
               </div>
-              <div className="bg-[#111319]/40 border border-white/5 p-4 text-left">
-                <span className="text-white/40 text-[9px] block uppercase tracking-wider mb-1">Index // Projects</span>
-                <span className="text-2xl font-bold text-[#9B86BD]">12+</span>
-                <span className="text-[9px] text-white/60 block uppercase tracking-wider mt-0.5">Delivered</span>
+              <div className="rounded-3xl border border-white/8 bg-white/[0.03] p-5 text-left">
+                <span className="mb-2 block text-sm font-medium text-white/55">Projects</span>
+                <span className="text-3xl font-extrabold tracking-tight text-white">12+ delivered</span>
+                <span className="mt-1 block text-sm text-white/60">Across finance, ERP, and operations</span>
               </div>
-              <div className="bg-[#111319]/40 border border-white/5 p-4 text-left">
-                <span className="text-white/40 text-[9px] block uppercase tracking-wider mb-1">Index // Sectors</span>
-                <span className="text-2xl font-bold text-[#9B86BD]">03</span>
-                <span className="text-[9px] text-white/60 block uppercase tracking-wider mt-0.5">Industries</span>
+              <div className="rounded-3xl border border-white/8 bg-white/[0.03] p-5 text-left">
+                <span className="mb-2 block text-sm font-medium text-white/55">Focus</span>
+                <span className="text-3xl font-extrabold tracking-tight text-white">3 sectors</span>
+                <span className="mt-1 block text-sm text-white/60">Banking, enterprise software, and web products</span>
               </div>
             </div>
           </ScrollReveal>
         </div>
 
-        {/* ── Right Side: Geometric Mask Image Block (5 cols) ── */}
-        <ScrollReveal delay={250} className="lg:col-span-5 flex justify-center lg:justify-end">
-          <div className="relative group select-none">
+        <ScrollReveal delay={250} className="flex justify-center pt-6 md:pt-8 lg:col-span-5 lg:justify-end lg:pt-16 xl:pt-20">
+          <div className="space-y-4 select-none">
+            <div className="relative group">
 
-            {/* Precise Solid Accent Border Frame Behind Image */}
-            <div className="absolute top-4 left-4 -right-4 -bottom-4 border border-[#9B86BD]/20 pointer-events-none group-hover:translate-x-1 group-hover:translate-y-1 transition-transform duration-500" />
+              <div className="pointer-events-none absolute inset-[-12px] rounded-[2.5rem] border border-white/8 transition-transform duration-500 group-hover:translate-x-1 group-hover:translate-y-1" />
 
-            {/* Main Portrait Container */}
-            <div className="relative w-[280px] sm:w-[320px] aspect-[4/5] bg-[#111319] border border-white/10 p-2 overflow-hidden">
+              <div className="relative aspect-[4/5] w-[300px] overflow-hidden rounded-[2rem] border border-white/10 bg-[#111319] p-3 shadow-[0_20px_80px_rgba(0,0,0,0.35)] sm:w-[360px]">
               
-              {/* Inner geometric blueprint lines */}
-              <div className="absolute inset-0 border border-[#9B86BD]/15 m-3 pointer-events-none z-10" />
+                <div className="pointer-events-none absolute inset-0 z-10 m-4 rounded-[1.5rem] border border-white/8" />
 
-              {/* Photo Container */}
-              <div className="relative w-full h-full overflow-hidden transition-all duration-700 ease-out bg-[#0c0d12]">
-                <Image
-                  src={profilePic}
-                  alt="Khin Cho Htet — Portrait"
-                  fill
-                  className="object-cover object-top scale-[1.02] hover:scale-105 transition-transform duration-700 ease-out"
-                  priority
-                />
+                <div className="relative h-full w-full overflow-hidden rounded-[1.35rem] bg-[#0c0d12] transition-all duration-700 ease-out">
+                  <Image
+                    src={profilePic}
+                    alt="Khin Cho Htet — Portrait"
+                    fill
+                    sizes="(max-width: 640px) 300px, 360px"
+                    className="object-cover object-top scale-[1.02] transition-transform duration-700 ease-out hover:scale-105"
+                    priority
+                  />
+                </div>
               </div>
             </div>
 
-            {/* Location Tag */}
-            <div className="absolute -top-3 -left-3 flex items-center gap-2 bg-[#111319] border border-white/10 px-3 py-1.5 z-20 shadow-md">
-              <MapPin className="w-3.5 h-3.5 text-[#C57BCC] shrink-0" />
-              <div>
-                <span className="font-mono text-[9px] text-white/50 block uppercase tracking-widest">Stationed</span>
-                <span className="font-mono text-[10px] text-white font-medium">Mandalay, MM</span>
+            <div className="flex flex-wrap items-center gap-3 px-1">
+              <div className="flex items-center gap-2 rounded-full border border-white/12 bg-[#111319]/92 px-4 py-2 shadow-md backdrop-blur">
+                <MapPin className="h-4 w-4 shrink-0 text-[#C57BCC]" />
+                <div>
+                  <span className="block text-xs text-white/50">Based in</span>
+                  <span className="text-sm font-semibold text-white">Mandalay, Myanmar</span>
+                </div>
+              </div>
+
+              <div className="flex items-center gap-2 rounded-full border border-white/12 bg-[#111319]/92 px-4 py-2 shadow-md backdrop-blur">
+                <Star className="h-4 w-4 shrink-0 fill-[#9B86BD] text-[#9B86BD]" />
+                <div>
+                  <span className="block text-xs text-white/50">Availability</span>
+                  <span className="text-sm font-semibold text-white">Open to new opportunities</span>
+                </div>
               </div>
             </div>
-
-            {/* Status Tag */}
-            <div className="absolute -bottom-3 -right-3 flex items-center gap-2 bg-[#111319] border border-white/10 px-3 py-1.5 z-20 shadow-md">
-              <Star className="w-3.5 h-3.5 text-[#9B86BD] fill-[#9B86BD] shrink-0" />
-              <div>
-                <span className="font-mono text-[9px] text-white/50 block uppercase tracking-widest">Availability</span>
-                <span className="font-mono text-[10px] text-white font-medium">Active Command</span>
-              </div>
-            </div>
-
           </div>
         </ScrollReveal>
 

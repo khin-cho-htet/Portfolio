@@ -32,21 +32,18 @@ const certifications = [
 export function Certifications() {
   return (
     <section className="relative py-28 px-6 bg-[#0c0d12] border-t border-white/5">
-      {/* Structural technical grid lines */}
       <div className="absolute inset-y-0 left-[25%] w-[1px] bg-white/5 pointer-events-none" />
 
       <div className="container mx-auto max-w-6xl relative z-10">
         <ScrollReveal delay={100} className="mb-24 text-left space-y-4">
-          <div className="flex items-center gap-2 font-mono text-xs uppercase tracking-[0.25em] text-[#9B86BD]">
-            <span>[ Section.05 ]</span>
-            <span>•</span>
-            <span>Verified Credentials</span>
+          <div className="text-base font-semibold text-[#d4c6ea] md:text-lg">
+            Credentials
           </div>
-          <h3 className="text-4xl md:text-5xl font-headline font-bold text-white uppercase tracking-tight">
+          <h3 className="font-headline text-4xl font-extrabold tracking-[-0.03em] text-white md:text-5xl">
             Credentials
           </h3>
-          <p className="font-mono text-xs text-white/40 tracking-wider">
-            OFFICIALLY VERIFIED SCHOLASTIC AND SYSTEM ENGINE REGISTRY
+          <p className="max-w-2xl text-lg leading-8 text-white/60">
+            Professional certifications that support the delivery, analysis, and collaboration side of my work.
           </p>
         </ScrollReveal>
 
@@ -60,9 +57,8 @@ export function Certifications() {
               rel="noopener noreferrer" 
               className="block group"
             >
-              <Card className="bg-[#111319] border-white/5 group-hover:border-[#C57BCC]/30 transition-all rounded-none overflow-hidden p-6 flex flex-col items-start min-h-[220px] justify-between shadow-none relative">
+              <Card className="relative flex min-h-[220px] flex-col items-start justify-between overflow-hidden rounded-[1.75rem] border-white/5 bg-[#111319] p-6 shadow-none transition-all group-hover:border-[#C57BCC]/30">
                 
-                {/* Tech tick indicators */}
                 <div className="absolute top-0 right-0 w-2 h-2 border-t border-r border-white/10" />
                 <div className="absolute bottom-0 left-0 w-2 h-2 border-b border-l border-white/10" />
 
@@ -70,22 +66,22 @@ export function Certifications() {
                   <div className="w-10 h-10 border border-[#9B86BD]/20 bg-[#0c0d12] flex items-center justify-center text-[#9B86BD] group-hover:border-[#9B86BD]/50 transition-colors">
                     <Award className="w-5.5 h-5.5" />
                   </div>
-                  <span className="font-mono text-[9px] text-[#9B86BD]/60 bg-[#9B86BD]/5 px-2 py-0.5 border border-[#9B86BD]/10 tracking-wider">
-                    {cert.code}
+                  <span className="rounded-full border border-white/10 bg-white/[0.03] px-3 py-1 text-xs font-medium text-white/50">
+                    Verified
                   </span>
                 </div>
 
                 <div className="space-y-2 mt-6 w-full">
-                  <h4 className="font-headline font-bold text-base leading-tight text-white uppercase tracking-tight group-hover:text-[#9B86BD] transition-colors">
+                  <h4 className="font-headline text-xl font-bold leading-tight text-white tracking-tight transition-colors group-hover:text-[#9B86BD]">
                     {cert.title}
                   </h4>
-                  <p className="text-white/40 text-[10px] font-mono uppercase tracking-wider">
+                  <p className="text-sm text-white/50">
                     {cert.issuer}
                   </p>
                 </div>
 
-                <div className="border-t border-white/5 pt-4 mt-6 w-full flex items-center justify-between text-white/50 font-mono text-[9px] uppercase tracking-widest group-hover:text-white transition-colors">
-                  <span className="flex items-center gap-1.5"><ShieldCheck className="w-3.5 h-3.5 text-[#C57BCC]" /> VERIFIED SECURE</span>
+                <div className="mt-6 flex w-full items-center justify-between border-t border-white/5 pt-4 text-sm text-white/50 transition-colors group-hover:text-white">
+                  <span className="flex items-center gap-1.5"><ShieldCheck className="h-3.5 w-3.5 text-[#C57BCC]" /> View certificate</span>
                   <ExternalLink className="w-3.5 h-3.5 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
                 </div>
               </Card>
