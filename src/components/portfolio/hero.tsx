@@ -40,25 +40,28 @@ export function Hero() {
         </div>
 
         <div className="relative flex justify-center lg:justify-end stagger-item [animation-delay:0.5s]">
-          <div className="relative w-80 h-80 md:w-[450px] md:h-[550px]">
-            {/* Geometric Frames */}
-            <div className="absolute inset-0 border-2 border-primary/30 rounded-3xl rotate-6 animate-float" />
-            <div className="absolute inset-0 border-2 border-accent/30 rounded-full -rotate-6 animate-float [animation-delay:1s]" />
-            <div className="absolute inset-4 bg-secondary/40 backdrop-blur-sm rounded-2xl" />
+          <div className="relative w-80 h-80 md:w-[450px] md:h-[550px] flex items-center justify-center">
+            {/* Geometric Frames - Behind the Image */}
+            <div className="absolute inset-0 border-2 border-primary/30 rounded-3xl rotate-6 animate-float z-0" />
+            <div className="absolute inset-0 border-2 border-accent/30 rounded-full -rotate-6 animate-float [animation-delay:1s] z-0" />
+            <div className="absolute inset-4 bg-secondary/40 backdrop-blur-sm rounded-2xl z-0" />
             
-            <div className="absolute inset-2 overflow-hidden rounded-2xl">
-              <Image 
-                src={profileImage?.imageUrl || "https://picsum.photos/seed/khin_pro_v2/600/800"}
-                alt="Khin Cho Htet"
-                fill
-                className="object-cover object-top"
-                data-ai-hint="professional woman"
-                priority
-              />
+            {/* Masked Image Container */}
+            <div className="relative w-full h-full p-2 z-10">
+               <div className="w-full h-full relative overflow-hidden rounded-2xl mask-blob">
+                <Image 
+                  src={profileImage?.imageUrl || "https://picsum.photos/seed/khin_pro_v3/600/800"}
+                  alt="Khin Cho Htet"
+                  fill
+                  className="object-cover object-top"
+                  data-ai-hint="professional woman"
+                  priority
+                />
+              </div>
             </div>
             
-            {/* Stats Badge - Adjusted to prevent clipping */}
-            <div className="absolute -bottom-4 -left-4 md:-bottom-8 md:-left-8 bg-card border border-border p-5 rounded-xl shadow-2xl stagger-item [animation-delay:0.8s] z-20 min-w-[160px]">
+            {/* Stats Badge - Positioned to avoid clipping */}
+            <div className="absolute -bottom-4 left-4 md:-bottom-6 md:left-0 bg-card border border-border p-5 rounded-xl shadow-2xl stagger-item [animation-delay:0.8s] z-30 min-w-[160px]">
               <div className="text-3xl font-bold font-headline text-primary">3+</div>
               <div className="text-[10px] text-muted-foreground uppercase tracking-widest font-bold">Years Experience</div>
             </div>
