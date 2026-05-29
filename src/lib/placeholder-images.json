@@ -1,3 +1,10 @@
 {
-  "placeholderImages": []
+  "placeholderImages": [
+    {
+      "id": "profile-khin",
+      "description": "Professional headshot of a female business analyst",
+      "imageUrl": "https://picsum.photos/seed/khin123/600/600",
+      "imageHint": "professional woman"
+    }
+  ]
 }
