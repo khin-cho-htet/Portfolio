@@ -1,5 +1,10 @@
-# Firebase Studio
+# Portfolio
 
-This is a NextJS starter in Firebase Studio.
+Personal portfolio built with Next.js, React, and Tailwind CSS.
 
-To get started, take a look at src/app/page.tsx.
+Available scripts:
+
+- `npm run dev`
+- `npm run typecheck`
+- `npm run build`
+- `npm run start`
