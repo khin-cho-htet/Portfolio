@@ -1,4 +1,3 @@
-
 import Image from 'next/image';
 import { Button } from '@/components/ui/button';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
@@ -41,24 +40,25 @@ export function Hero() {
         </div>
 
         <div className="relative flex justify-center lg:justify-end stagger-item [animation-delay:0.5s]">
-          <div className="relative w-80 h-80 md:w-[450px] md:h-[450px]">
+          <div className="relative w-80 h-80 md:w-[450px] md:h-[550px]">
             {/* Geometric Frames */}
             <div className="absolute inset-0 border-2 border-primary/30 rounded-3xl rotate-6 animate-float" />
             <div className="absolute inset-0 border-2 border-accent/30 rounded-full -rotate-6 animate-float [animation-delay:1s]" />
             <div className="absolute inset-4 bg-secondary/40 backdrop-blur-sm rounded-2xl" />
             
-            <div className="absolute inset-2 overflow-hidden rounded-2xl mask-blob">
+            <div className="absolute inset-2 overflow-hidden rounded-2xl">
               <Image 
-                src={profileImage?.imageUrl || "https://picsum.photos/seed/khin123/600/600"}
+                src={profileImage?.imageUrl || "https://picsum.photos/seed/khin123/600/800"}
                 alt="Khin Cho Htet"
                 fill
-                className="object-cover scale-110"
+                className="object-cover object-top"
                 data-ai-hint="professional woman"
+                priority
               />
             </div>
             
-            {/* Stats Badge */}
-            <div className="absolute bottom-4 left-4 md:-bottom-6 md:-left-6 bg-card border border-border p-4 rounded-xl shadow-2xl stagger-item [animation-delay:0.8s] z-20">
+            {/* Stats Badge - Adjusted to prevent clipping */}
+            <div className="absolute bottom-4 left-4 md:bottom-12 md:-left-12 bg-card border border-border p-4 rounded-xl shadow-2xl stagger-item [animation-delay:0.8s] z-20 min-w-[140px]">
               <div className="text-2xl font-bold font-headline text-primary">3+</div>
               <div className="text-xs text-muted-foreground uppercase tracking-wider">Years Experience</div>
             </div>

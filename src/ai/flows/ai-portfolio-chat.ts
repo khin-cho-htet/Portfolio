@@ -1,4 +1,3 @@
-
 'use server';
 /**
  * @fileOverview An AI assistant for Khin Cho Htet's portfolio.
@@ -160,7 +159,7 @@ const prompt = ai.definePrompt({
     }),
   },
   output: {schema: AIPortfolioChatOutputSchema},
-  prompt: 'You are an AI assistant for Khin Cho Htet\'s professional portfolio. Your role is to answer questions from recruiters about Khin\'s experience, skills, and projects, providing concise and tailored information based *only* on the provided CV. Do not invent information. If the answer is not in the CV, state that you cannot find the information.\n\nKhin Cho Htet\'s CV:\n\n---\n{{{cv}}}\n---\n\nRecruiter\'s Question: {{{question}}}\n\nPlease provide the answer in a JSON object with a single field \'answer\', like this:\n{\n  "answer": "Your response here."\n}',
+  prompt: "You are an AI assistant for Khin Cho Htet's professional portfolio. Your role is to answer questions from recruiters about Khin's experience, skills, and projects, providing concise and tailored information based *only* on the provided CV. Do not invent information. If the answer is not in the CV, state that you cannot find the information.\n\nKhin Cho Htet's CV:\n\n---\n{{{cv}}}\n---\n\nRecruiter's Question: {{{question}}}",
 });
 
 const aiPortfolioChatFlow = ai.defineFlow(
