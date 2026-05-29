@@ -58,7 +58,7 @@ export function Hero() {
             </div>
             
             {/* Stats Badge */}
-            <div className="absolute -bottom-6 -left-6 bg-card border border-border p-4 rounded-xl shadow-2xl stagger-item [animation-delay:0.8s]">
+            <div className="absolute bottom-4 left-4 md:-bottom-6 md:-left-6 bg-card border border-border p-4 rounded-xl shadow-2xl stagger-item [animation-delay:0.8s] z-20">
               <div className="text-2xl font-bold font-headline text-primary">3+</div>
               <div className="text-xs text-muted-foreground uppercase tracking-wider">Years Experience</div>
             </div>
