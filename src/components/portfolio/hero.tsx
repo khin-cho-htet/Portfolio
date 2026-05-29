@@ -48,7 +48,7 @@ export function Hero() {
             
             <div className="absolute inset-2 overflow-hidden rounded-2xl">
               <Image 
-                src={profileImage?.imageUrl || "https://picsum.photos/seed/khin123/600/800"}
+                src={profileImage?.imageUrl || "https://picsum.photos/seed/khin_pro_v2/600/800"}
                 alt="Khin Cho Htet"
                 fill
                 className="object-cover object-top"
@@ -58,9 +58,9 @@ export function Hero() {
             </div>
             
             {/* Stats Badge - Adjusted to prevent clipping */}
-            <div className="absolute bottom-4 left-4 md:bottom-12 md:-left-12 bg-card border border-border p-4 rounded-xl shadow-2xl stagger-item [animation-delay:0.8s] z-20 min-w-[140px]">
-              <div className="text-2xl font-bold font-headline text-primary">3+</div>
-              <div className="text-xs text-muted-foreground uppercase tracking-wider">Years Experience</div>
+            <div className="absolute -bottom-4 -left-4 md:-bottom-8 md:-left-8 bg-card border border-border p-5 rounded-xl shadow-2xl stagger-item [animation-delay:0.8s] z-20 min-w-[160px]">
+              <div className="text-3xl font-bold font-headline text-primary">3+</div>
+              <div className="text-[10px] text-muted-foreground uppercase tracking-widest font-bold">Years Experience</div>
             </div>
           </div>
         </div>

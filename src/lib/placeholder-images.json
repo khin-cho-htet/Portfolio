@@ -2,8 +2,8 @@
   "placeholderImages": [
     {
       "id": "profile-khin",
-      "description": "Professional headshot of a business analyst with long dark hair, white shirt, and black skirt",
-      "imageUrl": "https://picsum.photos/seed/khin123/600/800",
+      "description": "Professional headshot of a business analyst with long dark hair, wearing business attire, professional and friendly expression",
+      "imageUrl": "https://picsum.photos/seed/khin_cho_htet_v3/600/800",
       "imageHint": "professional woman"
     }
   ]
