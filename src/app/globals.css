@@ -4,24 +4,70 @@
 
 @layer base {
   :root {
-    --background: 230 18% 6%; /* Deep matte obsidian black #0c0d12 */
-    --foreground: 210 15% 94%; /* Clean editorial white */
-    --card: 230 14% 9%; /* Matte charcoal #111319 */
+    --background: 230 18% 6%;
+    --foreground: 210 15% 94%;
+    --card: 230 14% 9%;
     --card-foreground: 210 15% 94%;
     --popover: 230 18% 6%;
     --popover-foreground: 210 15% 94%;
-    --primary: 264 30% 64%; /* Deep Amethyst #9B86BD */
+    --primary: 264 30% 64%;
     --primary-foreground: 0 0% 100%;
     --secondary: 230 10% 13%;
     --secondary-foreground: 210 15% 94%;
     --muted: 230 10% 11%;
     --muted-foreground: 220 10% 65%;
-    --accent: 296 48% 64%; /* Vibrant Orchid #C57BCC */
+    --accent: 296 48% 64%;
     --accent-foreground: 0 0% 100%;
-    --border: 230 10% 14%; /* Precise structural border */
+    --border: 230 10% 14%;
     --input: 230 10% 14%;
     --ring: 264 30% 64%;
-    --radius: 0rem; /* Geometric, sharp, and structured corners for a niche feel */
+    --radius: 0rem;
+    --surface-page: 230 18% 6%;
+    --surface-panel: 230 14% 9%;
+    --surface-soft: 230 12% 12%;
+    --surface-elevated: 230 13% 15%;
+    --text-soft: 220 16% 82%;
+    --text-muted: 220 10% 65%;
+    --text-faint: 220 10% 50%;
+    --border-soft: 0 0% 100% / 0.07;
+    --border-strong: 0 0% 100% / 0.14;
+    --grid-line: 0 0% 100% / 0.06;
+    --accent-soft: 264 30% 64%;
+    --accent-strong: 296 48% 64%;
+    --selection: 264 30% 64% / 0.2;
+  }
+
+  html.light {
+    --background: 36 35% 97%;
+    --foreground: 227 25% 15%;
+    --card: 0 0% 100%;
+    --card-foreground: 227 25% 15%;
+    --popover: 36 35% 97%;
+    --popover-foreground: 227 25% 15%;
+    --primary: 225 39% 24%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 34 30% 92%;
+    --secondary-foreground: 227 25% 15%;
+    --muted: 34 18% 91%;
+    --muted-foreground: 225 12% 38%;
+    --accent: 19 77% 53%;
+    --accent-foreground: 0 0% 100%;
+    --border: 220 18% 84%;
+    --input: 220 18% 84%;
+    --ring: 19 77% 53%;
+    --surface-page: 36 35% 97%;
+    --surface-panel: 0 0% 100%;
+    --surface-soft: 34 30% 92%;
+    --surface-elevated: 35 40% 99%;
+    --text-soft: 226 19% 26%;
+    --text-muted: 225 12% 38%;
+    --text-faint: 225 10% 48%;
+    --border-soft: 225 18% 22% / 0.08;
+    --border-strong: 225 18% 22% / 0.14;
+    --grid-line: 225 18% 22% / 0.08;
+    --accent-soft: 225 39% 24%;
+    --accent-strong: 19 77% 53%;
+    --selection: 19 77% 53% / 0.16;
   }
 }
 
@@ -30,41 +76,54 @@
     @apply border-border;
   }
   body {
-    @apply bg-background text-foreground selection:bg-[#9B86BD]/20;
+    @apply bg-background text-foreground;
     font-feature-settings: "rlig" 1, "calt" 1;
-    background-color: #0c0d12;
     line-height: 1.5;
   }
 }
 
+::selection {
+  background-color: hsl(var(--selection));
+}
+
 /* Precise Technical Grid Lines & Subtle Architectural Backdrops */
 .grid-divider-h {
-  border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+  border-bottom: 1px solid hsl(var(--border-soft));
 }
 
 .grid-divider-v {
-  border-right: 1px solid rgba(255, 255, 255, 0.07);
+  border-right: 1px solid hsl(var(--border-soft));
 }
 
 .matrix-card {
-  background: #111319;
-  border: 1px solid rgba(255, 255, 255, 0.07);
+  background: hsl(var(--surface-panel));
+  border: 1px solid hsl(var(--border-soft));
   transition: border-color 0.3s ease, background 0.3s ease;
 }
 
 .matrix-card:hover {
-  border-color: rgba(197, 123, 204, 0.4);
-  background: #15171f;
+  border-color: hsl(var(--accent-strong) / 0.4);
+  background: hsl(var(--surface-elevated));
 }
 
 /* Technical blueprint dotted grid pattern background */
 .blueprint-dots {
   background-image:
-    radial-gradient(circle at top left, rgba(155, 134, 189, 0.12), transparent 30%),
-    linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+    radial-gradient(circle at top left, hsl(var(--accent-soft) / 0.14), transparent 30%),
+    linear-gradient(hsl(var(--grid-line)) 1px, transparent 1px),
+    linear-gradient(90deg, hsl(var(--grid-line)) 1px, transparent 1px);
   background-size: auto, 32px 32px, 32px 32px;
   background-position: 0 0, center, center;
+}
+
+.theme-transition,
+.theme-transition * {
+  transition:
+    background-color 0.25s ease,
+    border-color 0.25s ease,
+    color 0.25s ease,
+    fill 0.25s ease,
+    stroke 0.25s ease;
 }
 
 /* Scroll-based animation states */
@@ -88,4 +147,3 @@
 .delay-600 { transition-delay: 600ms; }
 .delay-700 { transition-delay: 700ms; }
 .delay-800 { transition-delay: 800ms; }
-
