@@ -18,7 +18,7 @@ export default function Home() {
   return (
     <main className="relative min-h-screen bg-background blueprint-dots">
       <header className="fixed left-0 right-0 top-0 z-50 border-b border-[hsl(var(--border-soft))] bg-[hsl(var(--surface-page)/0.92)] backdrop-blur-xl">
-        <div className="mx-auto flex w-full max-w-7xl flex-col gap-3 px-4 py-4 sm:px-6 lg:flex-row lg:items-center lg:justify-between lg:px-10">
+        <div className="mx-auto flex w-full max-w-7xl flex-col gap-3 px-4 py-4 sm:px-6 lg:flex-row lg:items-center lg:gap-6 lg:px-10">
           <div className="flex items-start justify-between gap-3 sm:items-center sm:gap-4 lg:flex-1">
             <div className="min-w-0 space-y-1.5">
               <div className="flex min-w-0 items-center gap-3">
@@ -32,7 +32,6 @@ export default function Home() {
             </div>
 
             <div className="flex shrink-0 items-center gap-3">
-              <ThemeToggle />
               <a
                 href="mailto:khinchohtet15@gmail.com"
                 className="rounded-full border border-[hsl(var(--border-strong))] bg-[hsl(var(--surface-panel)/0.7)] px-4 py-2.5 text-sm font-semibold text-foreground transition-all duration-300 hover:border-[hsl(var(--accent-soft))] hover:bg-[hsl(var(--surface-panel))]"
@@ -42,7 +41,7 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="flex items-center gap-4 border-t border-[hsl(var(--border-soft))] pt-3 lg:flex-none lg:border-t-0 lg:pt-0">
+          <div className="flex items-center justify-between gap-4 border-t border-[hsl(var(--border-soft))] pt-3 lg:flex-1 lg:border-t-0 lg:pt-0">
             <nav className="-mx-1 flex min-w-0 flex-1 items-center gap-2 overflow-x-auto px-1 pb-1 text-sm font-medium text-[hsl(var(--text-muted))] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden lg:pb-0">
               {headerLinks.map((link) => (
                 <a
@@ -54,6 +53,9 @@ export default function Home() {
                 </a>
               ))}
             </nav>
+            <div className="shrink-0">
+              <ThemeToggle />
+            </div>
           </div>
         </div>
       </header>
